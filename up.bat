@@ -11,7 +11,7 @@ git pull origin master
 
 if not defined wspath (set wspath=G:\QGB\babun\cygwin\home\qgb\wshell\)
 if "%*"=="" (for /f "delims=" %%i in ('%wspath%datetime.bat') do set commit_msg=%%i ) else (set commit_msg=%*)
-if "%commit_msg%"=="" (set commit_msg="default up")
+if "%commit_msg%"=="" (set commit_msg=default up)
 
 
 git config --global user.email %gitMail%
