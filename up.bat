@@ -12,11 +12,12 @@ git pull origin master
 
 if not defined wspath (set wspath=G:\QGB\babun\cygwin\home\qgb\wshell\)
 if "%*"=="" (for /f "delims=" %%i in ('%wspath%datetime.bat') do set commit_msg=%%i ) else (set commit_msg=%*)
-
+@rem 如果up 不提供参数，则默认使用 当前时间 作为提交信息
 for /F "delims=" %%i  in ('date /t') do (set sdate=%%i)
 for /f "delims=" %%i in ('time /t') do (set stime=%%i)
 set sdate=%sdate: =%
 set datetime=%sdate%_%stime%
+@rem 
 if "%commit_msg%"=="" (set commit_msg=%datetime%)
 
 
